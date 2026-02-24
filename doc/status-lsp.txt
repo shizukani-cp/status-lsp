@@ -1,0 +1,36 @@
+*status-lsp.txt* LSP component sources for status.nvim      Last Change: 2026-02-24
+
+==============================================================================
+INTRODUCTION                                                *status-lsp*
+
+LSP component sources for status.nvim.
+Each function provides real-time LSP information for the current buffer,
+intended to be used within the `components` table of `status.setup()`.
+
+==============================================================================
+
+SOURCES                                               *status-lsp-sources*
+
+lsp.status()                                            *status-lsp.status()*
+    Returns the names of all active LSP clients attached to the current buffer.
+    Format:  [client1,client2]
+    Returns an empty string if no clients are active.
+
+lsp.diagnostics()                                  *status-lsp.diagnostics()*
+    Returns the count of diagnostics for the current buffer, categorized by
+    severity (Error, Warning, Info, Hint).
+    Only non-zero counts are displayed with their respective icons.
+    Icons used:  (Error),  (Warn),  (Info),  (Hint)
+
+==============================================================================
+
+REQUIREMENTS                                         *status-lsp-requirements*
+
+These components use Nerd Font icons by default. Ensure your terminal or GUI
+is using a Nerd Font for correct rendering of:
+-  (LSP Gear)
+-     (Diagnostic levels)
+
+==============================================================================
+
+vim:tw=78:ft=help:norl:
